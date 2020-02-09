@@ -17,7 +17,7 @@
                 <el-menu router>
                     <el-submenu v-for="(item, index) in $router.options.routes" :index="index+''">
                         <template slot="title"><i class="el-icon-message"></i>{{item.name}}</template>
-                        <el-menu-item v-for="(subItem, subIndex) in item.children" :index="subItem.path">{{subItem.name}}</el-menu-item>
+                        <el-menu-item :class="$route.path == subItem.path ? 'is-active' : ''" v-for="(subItem, subIndex) in item.children" :index="subItem.path">{{subItem.name}}</el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-aside>

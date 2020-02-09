@@ -14,7 +14,7 @@
                 <!--            <el-menu-item index="2-2">选项4</el-menu-item>-->
                 <!--          </el-submenu>-->
                 <!--        </el-menu>-->
-                <el-menu router>
+                <el-menu router :default-openeds="['0']">
                     <el-submenu v-for="(item, index) in $router.options.routes" :index="index+''">
                         <template slot="title"><i class="el-icon-message"></i>{{item.name}}</template>
                         <el-menu-item :class="$route.path == subItem.path ? 'is-active' : ''" v-for="(subItem, subIndex) in item.children" :index="subItem.path">{{subItem.name}}</el-menu-item>

@@ -32,7 +32,7 @@ const routes = [
   {
     path:"/navi",
     name:"导航2",
-    component: App,
+    component: Index,
     children: [
       {
         path: "/pageThree",

@@ -8,13 +8,15 @@ import App from "../App.vue";
 import About from '../views/About.vue'
 import PageThree from "../views/PageThree";
 import PageFour from "../views/PageFour";
+import Index from "../views/Index";
+import PageTwo from "../views/PageTwo";
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
     name: '导航1',
-    component: App,
+    component: Index,
     children :[
       {
         path: "/pageOne",
@@ -23,7 +25,7 @@ const routes = [
       },{
         path: "/pageTwo",
         name: "页面2",
-        component: PageOne
+        component: PageTwo
       }
     ]
   },

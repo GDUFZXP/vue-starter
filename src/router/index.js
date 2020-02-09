@@ -17,6 +17,7 @@ const routes = [
     path: '/',
     name: '导航1',
     component: Index,
+    redirect: "pageOne",//默认跳转的首页地址
     children :[
       {
         path: "/pageOne",

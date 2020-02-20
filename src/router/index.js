@@ -3,49 +3,41 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Hello from '../views/Hello.vue'
 import Book from '../views/Book.vue'
-import PageOne from "../views/PageOne.vue";
+import BookList from "../views/BookList.vue";
 import App from "../App.vue";
 import About from '../views/About.vue'
 import PageThree from "../views/PageThree";
 import PageFour from "../views/PageFour";
 import Index from "../views/Index";
-import PageTwo from "../views/PageTwo";
+import BookAdd from "../views/BookAdd";
+import BookEdit from "../views/BookEdit";
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: '导航1',
+    name: '图书管理',
     component: Index,
-    redirect: "pageOne",//默认跳转的首页地址
+    redirect: "bookList",//默认跳转的首页地址
+    show:true,
     children :[
       {
-        path: "/pageOne",
-        name: "页面1",
-        component: PageOne
+        path: "/bookList",
+        name: "图书列表",
+        component: BookList
       },{
-        path: "/pageTwo",
-        name: "页面2",
-        component: PageTwo
+        path: "/bookAdd",
+        name: "添加图书",
+        component: BookAdd
       }
     ]
   },
   {
-    path:"/navi",
-    name:"导航2",
-    component: Index,
-    children: [
-      {
-        path: "/pageThree",
-        name: "页面3",
-        component: PageThree
-      },{
-        path: "/pageFour",
-        name: "页面4",
-        component: PageFour
-      }
-    ]
-  },
+    path: "/bookEdit",
+    name: "编辑书籍",
+    show: false,
+    component: BookEdit
+  }
 ]
 
 const router = new VueRouter({
